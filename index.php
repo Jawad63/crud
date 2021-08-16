@@ -11,7 +11,7 @@
 
    <!-- Create POST form with name and location-->
    <div class="row justify-content-center">
-      <form action="" method="POST">
+      <form action="process.php" method="POST">
 
          <div class="form-group">
             <label>Name:</label>
@@ -42,7 +42,7 @@
 
 
 
-
+<?php require_once 'process.php'; ?>
 
 <!-- Here goes bootstrap files: -->
 
