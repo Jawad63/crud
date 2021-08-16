@@ -10,19 +10,25 @@
 <body>
 
    <!-- Create POST form with name and location-->
+   <div class="row justify-content-center">
+      <form action="" method="POST">
 
-   <form action="" method="POST">
-      <label>Name:</label>
-         <input type="text" name="name">
-      <label>Games:</label>
-         <input type="text" name="collection">
-      <button type="submit" name="save" class="btn btn-primary">Save</button>
-   </form>
+         <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" class="form-control">
+         </div>
 
-   <?php
-   echo 'hello world!';
+         <div class="form-group">    
+            <label>Games:</label>
+            <input type="text" name="collection" class="form-control">
+         </div>
 
-   ?>
+         <div class="form-group">
+            <button type="submit" name="save" class="btn btn-primary">Save</button>
+         </div>
+
+      </form>
+   </div>
 
 
 
