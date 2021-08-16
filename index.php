@@ -9,6 +9,17 @@
 </head>
 <body>
 
+   <!-- Create POST form with name and location-->
+
+   <form action="" method="POST">
+      <label>Name:</label>
+         <input type="text" name="name">
+      <label>Games:</label>
+         <input type="text" name="collection">
+      <button type="submit" name="save" class="btn btn-primary">Save</button>
+   </form>
+
+
 
 
 
