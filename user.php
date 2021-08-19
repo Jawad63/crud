@@ -1,3 +1,25 @@
+<?php
+include 'connect.php';
+if (isset($_POST['submit'])) {
+   $name= $_POST['name'];
+   $email= $_POST['email'];
+   $mobile= $_POST['mobile'];
+   $password= $_POST['password'];
+
+   //insert query:
+
+   $sql = "insert into `crud` (name,email,mobile,password) values('$name','$email','$mobile','$password')";
+
+   $result = mysqli_query($connection,$sql);
+   if ($result) {
+         echo "Data inserted successfully";
+   }  else {
+      die(mysqli_error($connection));
+   }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,7 +34,7 @@
   </head>
   <body>
 
-   <div class="container my-5">
+   <div class="container py-5">
       <form method="post">
 
          <div class="form-group">
@@ -35,7 +57,7 @@
             <input type="text" class="form-control" placeholder="Enter your password" name="password" autocomplete="off">
          </div>
 
-         <button type="submit" class="btn btn-primary">Submit</button>
+         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
       </form>
    </div>
