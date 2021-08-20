@@ -1,3 +1,7 @@
+<?php
+include 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +20,54 @@
       <button class="btn btn-primary">
          <a href="user.php" class="text-light" style="text-decoration: none;">Add User</a>
       </button>
+
+
+      <table class="table">
+
+         <thead>
+
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col">Name</th>
+               <th scope="col">Email</th>
+               <th scope="col">Mobile</th>
+               <th scope="col">Password</th>
+               <th scope="col">Operation</th>
+            </tr>
+
+         </thead>
+
+         <tbody>
+         <!--Here comes the data tha should be displayed from the DB table:-->
+
+            <?php
+            $sql="Select * from `crud`";
+            $result = mysqli_query($connection, $sql);
+
+            if ($result) {
+               while($row = mysqli_fetch_assoc($result)) {
+                  $id = $row['id'];
+                  $name = $row['name'];
+                  $email = $row['email'];
+                  $mobile = $row['mobile'];
+                  $password = $row['password'];
+
+                  echo '<tr>
+                           <th scope="row">'.$id.'</th>
+                           <td>'.$name.'</td>
+                           <td>'.$email.'</td>
+                           <td>'.$mobile.'do</td>
+                           <td>'.$password.'do</td>
+                        </tr>';
+               }
+            }
+
+            ?>
+            
+         </tbody>
+
+      </table>
+
    </div>
 
 </body>

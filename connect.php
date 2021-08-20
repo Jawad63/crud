@@ -8,5 +8,4 @@ if(!$connection){
    echo "connection successfull";
 }
 
-
 ?>
