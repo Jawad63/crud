@@ -29,9 +29,8 @@ include 'connect.php';
             <tr>
                <th scope="col">#</th>
                <th scope="col">Name</th>
-               <th scope="col">Email</th>
-               <th scope="col">Mobile</th>
-               <th scope="col">Password</th>
+               <th scope="col">genre</th>
+               <th scope="col">game</th>
                <th scope="col">Operation</th>
             </tr>
 
@@ -41,26 +40,25 @@ include 'connect.php';
          <!--Here comes the data tha should be displayed from the DB table:-->
 
             <?php
-            $sql="Select * from `crud`";
+            $sql="Select * from `data`";
             $result = mysqli_query($connection, $sql);
 
             if ($result) {
                while($row = mysqli_fetch_assoc($result)) {
                   $id = $row['id'];
                   $name = $row['name'];
-                  $email = $row['email'];
-                  $mobile = $row['mobile'];
-                  $password = $row['password'];
+                  $genre = $row['genre'];
+                  $game = $row['game'];
 
                   echo '<tr>
                            <th scope="row">'.$id.'</th>
                            <td>'.$name.'</td>
-                           <td>'.$email.'</td>
-                           <td>'.$mobile.'do</td>
-                           <td>'.$password.'do</td>
+                           <td>'.$genre.'</td>
+                           <td>'.$game.'do</td>
+
                            <td>
                            <button class="btn btn-primary">
-                           <a href="update.php" class="text-light" style="text-decoration: none;">Update</a>
+                           <a href="update.php?updateid='.$id.'" class="text-light" style="text-decoration: none;">Update</a>
                            </button>
 
                            <button class="btn btn-danger">

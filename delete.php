@@ -4,7 +4,7 @@ include 'connect.php';
 if(isset($_GET['deleteid'])){
    $id = $_GET['deleteid'];
 
-   $sql = "delete from `crud` where id = $id";
+   $sql = "delete from `data` where id = $id";
    $result = mysqli_query($connection, $sql);
 
    if ($result) {

@@ -1,13 +1,21 @@
 <?php
 include 'connect.php';
+$id = $_GET['updateid'];
+$sql = "Select * from `data` where id = $id";
+$result = mysqli_query($connection, $sql);
+$row = mysqli_fetch_assoc($result);
+$name= $row['name'];
+$genre= $row['genre'];
+$game= $row['game'];
+
 if (isset($_POST['submit'])) {
    $name= $_POST['name'];
    $genre= $_POST['genre'];
    $game= $_POST['game'];
 
-   //insert query:
+   //Update query:
 
-   $sql = "insert into `data` (name,genre,game) values('$name','$genre','$game')";
+   $sql = "Update `data` set id = $id, name='$name', genre='$genre', game='$game', where id = $id";
 
    $result = mysqli_query($connection,$sql);
    if ($result) {
@@ -39,20 +47,20 @@ if (isset($_POST['submit'])) {
 
             <div class="form-group">
                <label>Name:</label>
-               <input type="text" class="form-control" placeholder="Enter your name" name="name" autocomplete="off">
+               <input type="text" class="form-control" placeholder="Enter your name" name="name" autocomplete="off" value=<?php echo $name;?>>
             </div>
 
             <div class="form-group">
                <label>Genre:</label>
-               <input type="text" class="form-control" placeholder="Enter your genre" name="genre" autocomplete="off">
+               <input type="text" class="form-control" placeholder="Enter your genre" name="genre" autocomplete="off" value=<?php echo $genre;?>>
             </div>
 
             <div class="form-group">
                <label>Game:</label>
-               <input type="text" class="form-control" placeholder="Enter your game" name="game" autocomplete="off">
+               <input type="text" class="form-control" placeholder="Enter your game" name="game" autocomplete="off" value=<?php echo $game;?>>
             </div>
 
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">Update</button>
 
          </form>
       </div>
