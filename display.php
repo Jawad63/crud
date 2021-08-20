@@ -58,12 +58,23 @@ include 'connect.php';
                            <td>'.$email.'</td>
                            <td>'.$mobile.'do</td>
                            <td>'.$password.'do</td>
+                           <td>
+                           <button class="btn btn-primary">
+                           <a href="update.php" class="text-light" style="text-decoration: none;">Update</a>
+                           </button>
+
+                           <button class="btn btn-danger">
+                           <a href="delete.php?deleteid='.$id.'" class="text-light" style="text-decoration: none;">Delete</a>
+                           </button>
+                           </td>
                         </tr>';
                }
             }
 
             ?>
-            
+
+
+
          </tbody>
 
       </table>
